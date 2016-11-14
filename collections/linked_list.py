@@ -56,18 +56,20 @@ class LinkedList(object):
         if (position < 0 or position >= self.size):
             raise Exception("IndexOutOfBoundsException, position =", position, ", size =", self.size)
         new_element = Element(value)
-        movable_element = self.__get_element(position)
-        if (movable_element == self.first):
-            new_element.next = movable_element
+        after = self.__get_element(position)
+        if (after == self.first):
+            new_element.next = after
             self.first = new_element
         else:
-            before = movable_element.previous
+            before = after.previous
+            new_element.previous = before
+            before.next = new_element
 
-
-        if (position == self.size - 1):
+        if (after == self.last):
+            new_element.previous = after
             after = self.last
         else:
-            after = movable_element.next
+            after = after.next
         new_element.previous = before
         before.next = new_element
         new_element.next
