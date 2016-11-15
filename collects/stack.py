@@ -3,7 +3,7 @@ import collects.linked_list
 
 class Stack:
     def __init__(self):
-        ll = collects.linked_list.LinkedList()
+        self.ll = collects.linked_list.LinkedList()
 
     def push(self, value):
         self.ll.add_first(value)
@@ -11,9 +11,7 @@ class Stack:
     def pop(self):
         if self.is_empty():
             return None
-        value = self.ll.get(0)
-        self.ll.remove(0)
-        return value
+        return self.ll.remove_first()
 
     def peek(self):
         if self.is_empty():

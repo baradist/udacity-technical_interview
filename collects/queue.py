@@ -11,9 +11,7 @@ class Queue:
     def poll(self):
         if self.is_empty():
             return None
-        value = self.ll.get(0)
-        self.ll.remove(0)
-        return value
+        return self.ll.remove_first()
 
     def peek(self):
         if self.is_empty():
