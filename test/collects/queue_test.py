@@ -5,18 +5,18 @@ import collects.queue
 class QuereTest (unittest.TestCase):
     def test(self):
         queue = collects.queue.Queue()
-        self.assertEqual(queue.is_empty(), True)
+        self.assertEqual(True, queue.is_empty())
 
         queue.add("one")
-        self.assertEqual(queue.peek(), "one")
-        self.assertEqual(queue.size(), 1)
+        self.assertEqual("one", queue.peek())
+        self.assertEqual(1, queue.size())
 
         queue.add("two")
         queue.add("three")
-        self.assertEqual(queue.is_empty(), False)
+        self.assertEqual(False, queue.is_empty())
         self.assertEqual(queue.size(), 3)
 
-        self.assertEqual(queue.poll(), "one")
-        self.assertEqual(queue.poll(), "two")
-        self.assertEqual(queue.poll(), "three")
-        self.assertEqual(queue.is_empty(), True)
+        self.assertEqual("one", queue.poll())
+        self.assertEqual("two", queue.poll())
+        self.assertEqual("three", queue.poll())
+        self.assertEqual(True, queue.is_empty())
