@@ -77,6 +77,18 @@ class LinkedList(object):
             removable.previous.next = removable.next
             removable.next.previous = removable.previous
         self._size -= 1
+        return removable.value
+
+    def remove_first(self):
+        removable = self.first
+        if self.last == removable:
+            self.first = None
+            self.last = None
+        else:
+            removable.next.previous = None
+            self.first = removable.next
+        self._size -= 1
+        return removable.value
 
     def __get_element(self, index):
         if index < 0 or index >= self._size:
