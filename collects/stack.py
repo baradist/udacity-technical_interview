@@ -1,10 +1,9 @@
 import collects.linked_list
 
-class Stack:
-    ll = collects.linked_list.LinkedList()
 
+class Stack:
     def __init__(self):
-        pass
+        ll = collects.linked_list.LinkedList()
 
     def push(self, value):
         self.ll.add_first(value)

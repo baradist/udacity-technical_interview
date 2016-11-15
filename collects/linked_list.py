@@ -1,4 +1,5 @@
 
+
 class Element(object):
     def __init__(self, value):
         self.value = value
@@ -7,11 +8,10 @@ class Element(object):
 
 
 class LinkedList(object):
-    first = None
-    last = None
-    _size = 0
-
     def __init__(self, value=None):
+        self.first = None
+        self.last = None
+        self._size = 0
         if not value == None:
             self.add_first(value)
 
