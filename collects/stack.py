@@ -1,10 +1,10 @@
-import linked_list
+import collects.linked_list
 
 class Stack:
-    ll = linked_list.LinkedList()
+    ll = collects.linked_list.LinkedList()
 
-    def __init__(self, value=None):
-        self.first = self.ll.add_first(value)
+    def __init__(self):
+        pass
 
     def push(self, value):
         self.ll.add_first(value)
