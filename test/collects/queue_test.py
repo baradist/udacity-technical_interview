@@ -2,7 +2,7 @@ import unittest
 import collects.queue
 
 
-class QuereTest (unittest.TestCase):
+class QueueTest (unittest.TestCase):
     def test(self):
         queue = collects.queue.Queue()
         self.assertEqual(True, queue.is_empty())
