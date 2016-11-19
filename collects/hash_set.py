@@ -9,6 +9,9 @@ class HashSet:
     def add(self, value):
         self.l.put(value, None)
 
+    def add_all(self, set):
+        self.l.put_all(set.l)
+
     def get(self, value):
         return self.l._get(value).key
 
