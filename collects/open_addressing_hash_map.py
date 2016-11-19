@@ -7,7 +7,7 @@ class Node:
 class HashMap:
     def __init__(self, capacity):
         self.capacity = capacity
-        self.l = [0 for i in range(0, capacity)]
+        self.l = [0 for i in range(0, capacity)] # todo
         self._size = 0
 
     def _hash(self, key):
@@ -20,6 +20,13 @@ class HashMap:
         if not self.l[index]:
             self._size += 1
         self.l[index] = Node(key, value)
+
+    def put_all(self, map):
+        if self._size + map.size() >= self.capacity:
+            raise Exception("Nowhere to put, map is full, size and capacity =", self.capacity, "(trying to add", map.size())
+        for i in range(0, map.capacity):
+            if map.l[i]:
+                self.put(map.l[i].key, map.l[i].value)
 
     def get(self, key):
         return self._get(key).value
