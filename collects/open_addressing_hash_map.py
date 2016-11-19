@@ -22,7 +22,13 @@ class HashMap:
         self.l[index] = Node(key, value)
 
     def get(self, key):
-        return self.l[self._find_index(key)].value
+        return self._get(key).value
+
+    def _get(self, key):
+        return self.l[self._find_index(key)]
+
+    def size(self):
+        return self._size
 
     def _find_index(self, key):
         index = self._hash(key)
